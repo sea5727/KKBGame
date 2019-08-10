@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { View, Text, StatusBar, StyleSheet } from 'react-native';
+import Field from '../Components/Field';
+import KKB from '../Components/KKB';
 
 const styles = StyleSheet.create({
     container : {
@@ -12,10 +14,14 @@ const styles = StyleSheet.create({
     enemyField : {
         flex : 2,
         backgroundColor : 'red',
+        alignItems : 'center',
+        justifyContent : 'center',
     },
     myField : {
         flex : 2,
         backgroundColor : 'blue',
+        alignItems : 'center',
+        justifyContent : 'center',
     },
     my: {
         flex : 1,
@@ -28,19 +34,10 @@ class GameScreen extends Component {
         return(
             <View style={styles.container}>
                 <StatusBar hidden={true}/>
-                <View style={styles.enemy}>
-                    <View><Text>적_가위</Text></View>
-                    <View><Text>적_바위</Text></View>
-                    <View><Text>적_보</Text></View>
-                </View>
-                <View style={styles.enemyField}></View>
-                <View style={styles.myField}></View>
-                <View style={styles.my}>
-                    <View><Text>나_가위</Text></View>
-                    <View><Text>나_바위</Text></View>
-                    <View><Text>나_보</Text></View>
-                </View>
-
+                <KKB style={styles.enemy}></KKB>
+                <Field style={styles.enemyField}></Field>
+                <Field style={styles.myField}></Field>
+                <KKB style={styles.my}></KKB>
             </View>
         );
     }
